@@ -11,6 +11,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
+    // call viewmodel instance by Koin
     private val viewModel: MainViewModel by viewModel()
 
     @SuppressLint("SetTextI18n")
@@ -18,7 +19,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // fetch users
         viewModel.users()
+
+        // observing user as result case
         viewModel.users.observe(this) {
             when (it) {
                 is Result.Idle -> {

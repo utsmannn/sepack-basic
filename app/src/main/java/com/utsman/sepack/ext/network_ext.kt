@@ -4,7 +4,9 @@ import com.utsman.sepack.domain.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-suspend fun <T: Any> data(call: suspend () -> T): Flow<Result<T>> = flow {
+
+// use case function for any call route
+suspend fun <T: Any> api(call: suspend () -> T): Flow<Result<T>> = flow {
     emit(Result.Loading())
     try {
         val data = call.invoke()

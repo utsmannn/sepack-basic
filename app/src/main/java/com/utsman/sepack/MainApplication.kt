@@ -7,6 +7,8 @@ class MainApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        // start Koin for dependencies injection
         startKoin {
             modules(
                 repository,
