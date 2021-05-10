@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Sepack-mvvm"
+rootProject.name = "sepack-name-project"
